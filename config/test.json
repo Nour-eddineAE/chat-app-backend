@@ -1,0 +1,3 @@
+{
+  "DB_URL": "mongodb://localhost/chat_app_db_tests"
+}

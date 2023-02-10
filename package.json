@@ -1,0 +1,26 @@
+{
+  "name": "chat-app-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "app-root-path": "^3.1.0",
+    "config": "^3.3.9",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "joi": "^17.7.1",
+    "joi-objectid": "^4.0.2",
+    "mongoose": "^6.9.1",
+    "morgan": "^1.10.0",
+    "winston": "^3.8.2",
+    "winston-mongodb": "^5.1.1"
+  }
+}
