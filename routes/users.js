@@ -34,7 +34,7 @@ router.post("/", middlewares, async (request, response) => {
   response.status(200).send(user);
 });
 
-// update an user
+// update a user
 router.put("/:id", middlewares, async (request, response) => {
   const userId = request.params.id;
   const user = await User.findByIdAndUpdate(
