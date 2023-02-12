@@ -11,7 +11,7 @@ const middlewares = [validate(validateBody)];
 
 // get all messages
 router.get("/", async (request, response) => {
-  const messages = await Message.find();
+  const messages = await Message.find().sort("_id");
   response.send(messages);
 });
 
@@ -29,10 +29,9 @@ router.get("/:id", async (request, response) => {
 
 // create a new message
 router.post("/", middlewares, async (request, response) => {
-  const { senderId, receiverId } = await validateExistance(request, response);
+  const { senderId } = await validateExistance(request, response);
   const message = new Message({
     senderId,
-    receiverId,
     content: request.body.content,
   });
   await message.save();
@@ -42,14 +41,13 @@ router.post("/", middlewares, async (request, response) => {
 
 // update an message
 router.put("/:id", middlewares, async (request, response) => {
-  const { senderId, receiverId } = await validateExistance(request, response);
+  const { senderId } = await validateExistance(request, response);
 
   const messageId = request.params.id;
   const message = await Message.findByIdAndUpdate(
     messageId,
     {
       senderId,
-      receiverId,
       content: request.body.content,
     },
     { new: true }

@@ -5,10 +5,6 @@ const messageSchema = new mongoose.Schema({
     type: mongoose.Types.ObjectId,
     required: true,
   },
-  receiverId: {
-    type: mongoose.Types.ObjectId,
-    required: true,
-  },
   content: {
     type: String,
     required: true,
